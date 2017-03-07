@@ -7,6 +7,9 @@ $(document).ready(function(){
         var num_inputs = $('#numbers').val();
         calculateMax(num_inputs);
     });
+    $('#clr-btn').click(function(){
+        $('#numbers').val('');
+    });
 })
 
 function calculateAvg(num_list){
