@@ -9,8 +9,13 @@ $(document).ready(function(){
     });
     $('#clr-btn').click(function(){
         $('#numbers').val('');
+        $('#answer').html('');
     });
-})
+
+function append_to_div(data){
+    $('#answer').html('');
+    $('#answer').append(data);
+}
 
 function calculateAvg(num_list){
     var parsed_num = 0;
@@ -18,8 +23,8 @@ function calculateAvg(num_list){
     for( i = 0; i<single_nums.length;i++){
         parsed_num += parseInt(single_nums[i]);
     }
-    var avg = (parsed_num/single_nums.length);
-    alert('Average is: ' + avg);
+    var answer = (parsed_num/single_nums.length);
+    append_to_div(answer);
 }
 
 function calculateMax(num_list){
@@ -29,6 +34,8 @@ function calculateMax(num_list){
         parsed_list.push(single_nums[i]);
     }
     var sorted_list = parsed_list.sort(function(a,b){return b-a});
-    console.log(sorted_list[0]);
+    append_to_div(sorted_list[0]);
 }
+
+})
 
